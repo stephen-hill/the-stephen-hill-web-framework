@@ -1,0 +1,92 @@
+/*** Reset ***/
+html, body, div, p,
+h1, h2, h3, h4, h5, h6,
+ul, ol, li,
+dl, dt, dd
+{
+	margin: 0;
+	padding: 0;
+}
+
+/*** Typography ***/
+html {
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+}
+
+html * {
+	line-height: 16px;
+}
+
+p, h1, h2, h3, h4, h5, h6
+{
+	margin-bottom: 16px;
+}
+
+h1 {
+	font-size: 3rem;
+	line-height: 54px;
+}
+
+/*** Grid ***/
+.gContainer {
+	background: #ddd;
+	margin:0 auto;
+	width:952px;
+}
+
+.gSpan1, .gSpan2, .gSpan3, .gSpan4, .gSpan5, .gSpan6, .gSpan7, .gSpan8,
+.gSpan9, .gSpan10, .gSpan11, .gSpan12, .gSpan13, .gSpan14, .gSpan15, .gSpan16,
+.gSpan17, .gSpan18, .gSpan19, .gSpan20, .gSpan21, .gSpan22, .gSpan23, .gSpan24
+{
+	float: left;
+	margin-right: 8px;
+}
+
+.gSpan1 {width:32px;}
+.gSpan2 {width:72px;}
+.gSpan3 {width:112px;}
+.gSpan4 {width:152px;}
+.gSpan5 {width:192px;}
+.gSpan6 {width:232px;}
+.gSpan7 {width:272px;}
+.gSpan8 {width:312px;}
+.gSpan9 {width:352px;}
+.gSpan10 {width:392px;}
+.gSpan11 {width:432px;}
+.gSpan12 {width:472px;}
+.gSpan13 {width:512px;}
+.gSpan14 {width:552px;}
+.gSpan15 {width:592px;}
+.gSpan16 {width:632px;}
+.gSpan17 {width:672px;}
+.gSpan18 {width:712px;}
+.gSpan19 {width:752px;}
+.gSpan20 {width:792px;}
+.gSpan21 {width:832px;}
+.gSpan22 {width:872px;}
+.gSpan23 {width:912px;}
+.gSpan24 {
+	margin-right: 0;
+	width:952px;
+}
+
+.gLast {
+	margin-right: 0;
+}
+
+/* Image Effects */
+
+.imageZoom img,
+img.imageZoom {
+	-webkit-transition: -webkit-transform 0.5s;
+}
+
+.imageZoom:hover img,
+img.imageZoom:hover {
+	-webkit-transform: scale(1.5) rotate(5deg);
+}
+
+img.imageShadow {
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+}
