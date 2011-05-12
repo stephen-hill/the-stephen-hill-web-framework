@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="/favicon.png" rel="icon" type="image/png"  />
+	<link href="/css/framework.css" rel="stylesheet" type="text/css" />
+	<script src="/javascript/jquery.js" type="text/javascript"></script>
+	<style type="text/css">
+		html {
+			background: #78451e url('flickr-background.jpg') top center;
+		}
+		
+		h1 {
+			color: black;
+			text-align: center;
+		}
+		
+		.flickrImage a {
+			display: block;
+			height: 110px;
+			line-height: 110px;
+			text-align: center;
+		}
+		
+		.flickrImage img {
+			max-height: 75px;
+			vertical-align: middle;
+		}
+	</style>
+	<title>The Stephen Hill Web Framework | Examples</title>
+</head>
+<body class="home">
+	<div class="gContainer">
+		<div class="gSpan24">
+			<h1>Flickr Gallery</h1>
+		</div>
+		
+		<a id="flickr"></a>
+	</div>
+	
+<script type="text/javascript">
+	$(document).ready(function(){
+		key = "4df280b90b2d095800235c3ba5d77733";
+		url = "http://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=" + key + "&format=json&nojsoncallback=1&per_page=24";
+		id = "#flickr";
+		
+		$.getJSON(url, '', function(data) {
+			photos = data.photos.photo;
+			for(var index in photos) {
+				photo = photos[index];
+				var content = "";
+				
+				if (index%4 == 3) {
+					content += "<div class=\"flickrImage gSpan6 gLast\">";
+				} else {
+					content += "<div class=\"flickrImage gSpan6\">";
+				}
+				
+				content += "<a class=\"imageZoom\" href=\"http://flickr.com/photos/" + photo.owner + "/" + photo.id + "\" title=\"" + photo.title + "\">";
+				content += "<img class=\"imageShadow\" src=\"http://farm" + photo.farm + ".static.flickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + "_m.jpg\" alt=\"" + photo.title + "\" />";
+				content += "</a>";
+				content += "</div>";
+				$(id).before(content);
+			}
+		});
+	});
+</script>
+</body>
+</html>
